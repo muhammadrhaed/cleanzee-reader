@@ -1,171 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cleanzee Reader</title>
-<meta name="theme-color" content="#00a8e8">
-<meta name="description" content="Fast, simple and free article reader. No disturbance, just a clean view the way you like.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2300a8e8'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial'%3EC%3C/text%3E%3C/svg%3E">
-<link rel="manifest" href='data:application/json,{"name":"Cleanzee Reader","short_name":"Cleanzee","start_url":".","display":"standalone","background_color":"#ffffff","theme_color":"#00a8e8","icons":[{"src":"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2300a8e8'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial'%3EC%3C/text%3E%3C/svg%3E","sizes":"192x192","type":"image/svg+xml"}]}'>
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:system-ui,-apple-system,sans-serif;background:#f8fafc;color:#1a1a1a;line-height:1.6}
-header{background:#00a8e8;color:#fff;padding:20px 16px 24px;text-align:center}
-.header-content{display:flex;align-items:center;justify-content:center;gap:12px}
-.logo{width:40px;height:40px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:24px;color:#00a8e8}
-h1{font-size:24px;font-weight:700}
-.subtitle{font-size:15px;opacity:.95;margin-top:4px}
-.container{max-width:680px;margin:0 auto;padding:0 16px}
-.badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:20px 0}
-.badge{background:#fff;border:1px solid #e2e8f0;padding:6px 14px;border-radius:20px;font-size:13px;display:flex;align-items:center;gap:6px}
-.card{background:#fff;border-radius:16px;padding:20px;margin:20px 0;box-shadow:0 1px 3px rgba(0,0,0,.05);border:1px solid #f1f5f9}
-.card-title{font-size:12px;font-weight:600;color:#64748b;margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px}
-input{width:100%;padding:14px;border:2px solid #e2e8f0;border-radius:10px;font-size:16px;margin-bottom:12px}
-input:focus{outline:none;border-color:#00a8e8}
-.btn-main{width:100%;background:#00a8e8;color:#fff;border:none;padding:14px;border-radius:10px;font-size:16px;font-weight:600;cursor:pointer;transition:transform .1s;display:flex;align-items:center;justify-content:center;gap:8px}
-.btn-main:active{transform:scale(.98)}
-.btn-main:disabled{opacity:.6;cursor:not-allowed}
-.help-text{font-size:13px;color:#64748b;margin-top:10px;line-height:1.5}
-.note-btn{background:#fff7ed;color:#c2410c;border:1px solid #fed7aa;padding:8px 12px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;margin:16px auto 0;display:flex;align-items:center;gap:6px;width:fit-content}
-.note-btn:hover{background:#ffedd5}
-.modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.4);z-index:100;align-items:center;justify-content:center;padding:16px}
-.modal-content{background:#fff;border-radius:16px;padding:24px;max-width:400px;width:100%;position:relative}
-.modal-close{position:absolute;top:12px;right:12px;background:none;border:none;font-size:24px;cursor:pointer;color:#94a3b8}
-.modal h3{font-size:18px;margin-bottom:12px;color:#1e293b}
-.modal ul{list-style:none;font-size:14px;color:#475569}
-.modal li{margin:8px 0;padding-left:20px;position:relative}
-.modal li:before{content:"•";position:absolute;left:0;color:#00a8e8;font-weight:700}
-.hero{text-align:center;padding:40px 0 20px}
-.hero-icon{width:64px;height:64px;background:#e0f2fe;border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:32px}
-.hero h2{font-size:22px;font-weight:700;margin-bottom:8px;color:#1e293b}
-.hero p{font-size:15px;color:#64748b;line-height:1.6;max-width:320px;margin:0 auto}
-.sample-section{text-align:center;margin:32px 0}
-.sample-title{font-size:11px;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
-.sample-link{background:#fff;border:1px solid #e2e8f0;padding:12px 16px;border-radius:10px;margin:8px 0;display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none;color:#334155;font-size:14px;transition:all .2s}
-.sample-link:hover{border-color:#00a8e8;background:#f0f9ff}
-.toolbar{position:sticky;top:0;background:#fff;padding:12px 16px;border-bottom:1px solid #f1f5f9;display:none;gap:8px;margin:0 -16px 16px}
-.toolbar button{background:#f8fafc;border:1px solid #e2e8f0;color:#1e293b;padding:8px 14px;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer}
-#output{display:none}
-#output h2{font-size:28px;margin:20px 0 16px;color:#1e293b}
-#content{font-size:18px;color:#334155}
-#content p{margin-bottom:16px}
-#content img{max-width:100%;height:auto;border-radius:12px;margin:16px 0}
-.error{background:#fef2f2;color:#dc2626;padding:14px;border-radius:10px;margin:16px 0;display:none;font-size:14px;border:1px solid #fecaca}
-footer{text-align:center;padding:32px 16px;color:#94a3b8;font-size:13px;border-top:1px solid #f1f5f9;margin-top:40px}
-footer strong{color:#00a8e8}
-.loader{display:none;text-align:center;padding:60px 0}
-.loader:after{content:"";display:inline-block;width:32px;height:32px;border:3px solid #e0f2fe;border-top:3px solid #00a8e8;border-radius:50%;animation:spin 1s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-</style>
-<script src="https://unpkg.com/@mozilla/readability@0.5.0/Readability.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cleanzee Reader</title>
+  <meta name="theme-color" content="#1a73e8">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 15px;
+      background: #f0f2f5;
+      color: #202124;
+    }
+  .container { max-width: 700px; margin: 0 auto; }
+  .header { text-align: center; margin-bottom: 20px; }
+  .header h1 { color: #1a73e8; margin: 0 0 5px 0; font-size: 28px; }
+  .header p { color: #5f6368; margin: 0; font-size: 14px; }
+  .input-group { margin-bottom: 15px; }
+    input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #dadce0;
+      border-radius: 12px;
+      font-size: 16px;
+      outline: none;
+    }
+    input:focus { border-color: #1a73e8; box-shadow: 0 0 0 2px rgba(26,115,232,0.2); }
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    button:active { background: #1557b0; }
+    button:disabled { background: #f1f3f4; color: #80868b; cursor: not-allowed; }
+  .note {
+      background: #e8f0fe;
+      padding: 16px;
+      border-radius: 12px;
+      margin: 20px 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  .note b { color: #1967d2; }
+    #reader {
+      margin-top: 20px;
+      padding: 24px;
+      background: white;
+      border-radius: 16px;
+      line-height: 1.7;
+      min-height: 100px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    #reader h2 { margin-top: 0; color: #202124; }
+    #reader img { max-width: 100%; border-radius: 12px; margin: 15px 0; }
+  .error { color: #d93025; text-align: center; font-weight: 500; }
+  .loading { text-align: center; color: #5f6368; }
+  .footer { text-align: center; margin-top: 30px; font-size: 12px; color: #80868b; }
+  </style>
 </head>
 <body>
-
-<header>
-  <div class="header-content">
-    <div class="logo">C</div>
-    <div>
+  <div class="container">
+    <div class="header">
       <h1>Cleanzee Reader</h1>
-      <div class="subtitle">Make any article easy to read</div>
-    </div>
-  </div>
-</header>
-
-<div class="container">
-  <div class="badges">
-    <div class="badge">🚫 No ads</div>
-    <div class="badge">📱 No popups</div>
-    <div class="badge">⚡ Instant</div>
-    <div class="badge">🔒 No tracking</div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">Article URL</div>
-    <input type="url" id="url" placeholder="https://example.com/news-article" />
-    <button class="btn-main" id="cleanBtn" onclick="cleanPage()">📖 Clean View</button>
-    <div class="help-text">Paste any news article, blog post, or long-form URL. Works best with text-heavy pages.</div>
-    <button class="note-btn" onclick="openModal()">ℹ️ Important Note</button>
-  </div>
-
-  <div class="error" id="error"></div>
-  <div class="loader" id="loader"></div>
-
-  <div class="toolbar" id="toolbar">
-    <button onclick="changeFont(-1)">A-</button>
-    <button onclick="changeFont(1)">A+</button>
-    <button onclick="copyText()">Copy Text</button>
-    <button onclick="goHome()">New Article</button>
-  </div>
-
-  <div id="output">
-    <h2 id="title"></h2>
-    <div id="content"></div>
-  </div>
-
-  <div id="homeContent">
-    <div class="hero">
-      <div class="hero-icon">📖</div>
-      <h2>Clean reading, instantly</h2>
-      <p>Paste any article URL above and Cleanzee Reader removes ads, popups, and distractions — leaving only the text that matters.</p>
+      <p>v1.1 - The cleanest way to read Wikipedia</p>
     </div>
 
-    <div class="sample-section">
-      <div class="sample-title">Try a sample article</div>
-      <div class="sample-link" onclick="trySample('https://en.wikipedia.org/wiki/Readability')">🔗 https://en.wikipedia.org/wiki/Readability</div>
-      <div class="sample-link" onclick="trySample('https://en.wikipedia.org/wiki/Philippines')">🔗 https://en.wikipedia.org/wiki/Philippines</div>
-      <div class="sample-link" onclick="trySample('https://en.wikipedia.org/wiki/Artificial_intelligence')">🔗 https://en.wikipedia.org/wiki/Artificial_intelligence</div>
+    <div class="input-group">
+      <input type="text" id="urlInput" placeholder="Paste Wikipedia link here..." autocomplete="off">
+      <button id="cleanBtn" onclick="getArticle()">Get Article</button>
+    </div>
+
+    <div class="note">
+      <b>Important Note:</b> Cleanzee removes ads, sidebars, and clutter from Wikipedia articles for focused reading. Formal reading mode by Muhammad Rhaed.
+    </div>
+
+    <div id="reader">
+      <p class="loading">Paste a Wikipedia link above and tap "Get Article"</p>
+    </div>
+
+    <div class="footer">
+      Made with focus by Muhammad Rhaed • v1.1
     </div>
   </div>
-</div>
 
-<footer><strong>Cleanzee Reader</strong> | Fast. Simple. Free.</footer>
+  <script>
+    async function getArticle() {
+      const urlInput = document.getElementById('urlInput');
+      const reader = document.getElementById('reader');
+      const btn = document.getElementById('cleanBtn');
+      const url = urlInput.value.trim();
 
-<div class="modal" id="noteModal">
-  <div class="modal-content">
-    <button class="modal-close" onclick="closeModal()">&times;</button>
-    <h3>Important Information</h3>
-    <ul>
-      <li><strong>Recommended:</strong> Wikipedia articles, blog posts, and news sites work best</li>
-      <li><strong>Not supported:</strong> Social media posts, login-required pages, or subscription content</li>
-      <li><strong>Required:</strong> Please use the complete article URL, not just the website homepage</li>
-      <li><strong>Privacy:</strong> All processing happens in your browser. We do not store your data.</li>
-    </ul>
-  </div>
-</div>
+      if (!url) {
+        reader.innerHTML = '<p class="error">Please paste a Wikipedia URL first</p>';
+        return;
+      }
 
-<script>
-let currentSize=18;
-function cleanPage(){
-const url=document.getElementById('url').value.trim();
-const error=document.getElementById('error');const loader=document.getElementById('loader');
-const output=document.getElementById('output');const toolbar=document.getElementById('toolbar');
-const btn=document.getElementById('cleanBtn');const home=document.getElementById('homeContent');
-error.style.display='none';output.style.display='none';toolbar.style.display='none';
-if(!url){showError('Please enter a valid article URL to continue.');return}
-if(!url.startsWith('http')){showError('Please enter a complete article URL. Example: https://en.wikipedia.org/wiki/Philippines');return}
-try{const urlObj=new URL(url);if(urlObj.pathname==='/'||urlObj.pathname===''){showError('Please enter a complete article URL. Example: https://en.wikipedia.org/wiki/Philippines');return}}catch(e){showError('Please enter a valid article URL to continue.');return}
-btn.disabled=true;loader.style.display='block';home.style.display='none';
-const proxyUrl='https://api.codetabs.com/v1/proxy?quest='+encodeURIComponent(url);
-fetch(proxyUrl).then(r=>{if(!r.ok)throw Error();return r.text()}).then(html=>{
-const doc=new DOMParser().parseFromString(html,'text/html');const article=new Readability(doc).parse();
-if(!article||!article.content)throw Error();
-document.getElementById('title').textContent=article.title||'Untitled Article';
-document.getElementById('content').innerHTML=article.content;
-document.getElementById('content').style.fontSize=currentSize+'px';
-output.style.display='block';toolbar.style.display='flex';window.scrollTo(0,0)
-}).catch(e=>{showError('Unable to load content. This may happen if: 1) The website blocks external readers 2) The URL is incomplete 3) The site requires a subscription. Please try a different article link. Wikipedia articles are most reliable.');home.style.display='block'}).finally(()=>{btn.disabled=false;loader.style.display='none'})}
-function trySample(url){document.getElementById('url').value=url;cleanPage()}
-function changeFont(d){currentSize=Math.max(14,Math.min(28,currentSize+d*2));document.getElementById('content').style.fontSize=currentSize+'px'}
-function copyText(){navigator.clipboard.writeText(document.getElementById('content').innerText);alert('Article text copied to clipboard successfully')}
-function goHome(){document.getElementById('output').style.display='none';document.getElementById('toolbar').style.display='none';document.getElementById('homeContent').style.display='block';document.getElementById('url').value='';window.scrollTo(0,0)}
-function showError(msg){const error=document.getElementById('error');error.textContent=msg;error.style.display='block'}
-function openModal(){document.getElementById('noteModal').style.display='flex'}
-function closeModal(){document.getElementById('noteModal').style.display='none'}
-document.getElementById('url').addEventListener('keypress',e=>{if(e.key==='Enter')cleanPage()});
-window.onclick=e=>{if(e.target===document.getElementById('noteModal'))closeModal()}
-</script>
+      if (!url.includes('wikipedia.org/wiki/')) {
+        reader.innerHTML = '<p class="error">Only Wikipedia links work in v1.1<br><br>Example: https://en.wikipedia.org/wiki/Philippines</p>';
+        return;
+      }
 
+      btn.disabled = true;
+      btn.textContent = 'Loading...';
+      reader.innerHTML = '<p class="loading">Fetching clean article...</p>';
+
+      try {
+        const title = decodeURIComponent(url.split('/wiki/')[1].split('#')[0].split('?')[0]);
+        if (!title) throw new Error('Invalid Wikipedia URL');
+
+        const apiUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${title}`;
+        const res = await fetch(apiUrl);
+
+        if (!res.ok) {
+          if (res.status === 404) throw new Error('Article not found');
+          throw new Error('Wikipedia API error');
+        }
+
+        const data = await res.json();
+
+        let html = `<h2>${data.title}</h2>`;
+        if (data.thumbnail && data.thumbnail.source) {
+          html += `<img src="${data.thumbnail.source}" alt="${data.title}">`;
+        }
+        html += `<p>${data.extract_html || data.extract}</p>`;
+        html += `<p style="margin-top:20px;font-size:12px;color:#80868b;">Source: Wikipedia • <a href="${url}" target="_blank">View original</a></p>`;
+
+        reader.innerHTML = html;
+
+      } catch (err) {
+        reader.innerHTML = `<p class="error">Error: ${err.message}<br><br>Try: https://en.wikipedia.org/wiki/Artificial_intelligence</p>`;
+      }
+
+      btn.disabled = false;
+      btn.textContent = 'Get Article';
+    }
+
+    document.getElementById('urlInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') getArticle();
+    });
+  </script>
 </body>
 </html>
