@@ -4,94 +4,278 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cleanzee Reader</title>
-  <meta name="theme-color" content="#1a73e8">
+  <meta name="theme-color" content="#667eea">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      margin: 0;
-      padding: 15px;
-      background: #f0f2f5;
-      color: #202124;
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+      color: #1f2937;
     }
-  .container { max-width: 700px; margin: 0 auto; }
-  .header { text-align: center; margin-bottom: 20px; }
-  .header h1 { color: #1a73e8; margin: 0 0 5px 0; font-size: 28px; }
-  .header p { color: #5f6368; margin: 0; font-size: 14px; }
-  .input-group { margin-bottom: 15px; }
+.container { max-width: 700px; margin: 0 auto; }
+.card {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      position: relative;
+    }
+.header { text-align: center; margin-bottom: 20px; }
+.header h1 {
+      font-size: 32px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+.tagline {
+      font-weight: 700;
+      font-size: 16px;
+      color: #1f2937;
+      letter-spacing: 1px;
+      margin: 10px 0;
+    }
+.tagline span { color: #667eea; }
+.header p { color: #6b7280; font-size: 14px; }
+.top-buttons {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+.about-btn {
+      background: rgba(102,126,234,0.1);
+      border: 1px solid #667eea;
+      color: #667eea;
+      padding: 8px 14px;
+      border-radius: 12px;
+      font-size: 13px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+.about-btn:active { background: rgba(102,126,234,0.2); }
+.input-group { position: relative; margin-bottom: 15px; margin-top: 10px; }
     input {
       width: 100%;
-      padding: 14px;
-      border: 1px solid #dadce0;
-      border-radius: 12px;
+      padding: 16px 50px;
+      border: 2px solid #e5e7eb;
+      border-radius: 16px;
       font-size: 16px;
       outline: none;
+      transition: all 0.3s;
     }
-    input:focus { border-color: #1a73e8; box-shadow: 0 0 0 2px rgba(26,115,232,0.2); }
+    input:focus { border-color: #667eea; box-shadow: 0 0 0 4px rgba(102,126,234,0.1); }
+.input-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #9ca3af;
+    }
     button {
       width: 100%;
-      padding: 14px;
-      background: #1a73e8;
+      padding: 16px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
       color: white;
       border: none;
-      border-radius: 12px;
-      font-size: 16px;
-      font-weight: 500;
-      cursor: pointer;
-    }
-    button:active { background: #1557b0; }
-    button:disabled { background: #f1f3f4; color: #80868b; cursor: not-allowed; }
-  .note {
-      background: #e8f0fe;
-      padding: 16px;
-      border-radius: 12px;
-      margin: 20px 0;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-  .note b { color: #1967d2; }
-    #reader {
-      margin-top: 20px;
-      padding: 24px;
-      background: white;
       border-radius: 16px;
-      line-height: 1.7;
-      min-height: 100px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s;
     }
-    #reader h2 { margin-top: 0; color: #202124; }
-    #reader img { max-width: 100%; border-radius: 12px; margin: 15px 0; }
-  .error { color: #d93025; text-align: center; font-weight: 500; }
-  .loading { text-align: center; color: #5f6368; }
-  .footer { text-align: center; margin-top: 30px; font-size: 12px; color: #80868b; }
+    button:active { transform: scale(0.98); }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+.note {
+      background: linear-gradient(135deg, #e0e7ff, #f3e8ff);
+      padding: 18px;
+      border-radius: 16px;
+      margin: 20px 0;
+      border-left: 4px solid #667eea;
+      font-size: 14px;
+    }
+.note i { color: #667eea; margin-right: 8px; }
+    #reader {
+      margin-top: 25px;
+      padding: 25px;
+      background: white;
+      border-radius: 20px;
+      line-height: 1.8;
+      min-height: 120px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    #reader h2 { color: #1f2937; margin-bottom: 15px; }
+    #reader img { max-width: 100%; border-radius: 16px; margin: 15px 0; }
+.error { color: #dc2626; text-align: center; font-weight: 500; }
+.loading { text-align: center; color: #6b7280; }
+.footer { text-align: center; margin-top: 25px; font-size: 13px; color: rgba(255,255,255,0.8); }
+.footer i { color: #fbbf24; }
+
+    /* Modal Styles */
+.modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(5px);
+    }
+.modal-content {
+      background: white;
+      margin: 10% auto;
+      padding: 30px;
+      border-radius: 24px;
+      width: 90%;
+      max-width: 500px;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+.modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+.modal-header h2 { color: #667eea; font-size: 24px; }
+.close-btn {
+      background: #f3f4f6;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+    }
+.modal-section { margin-bottom: 20px; }
+.modal-section h3 { color: #1f2937; font-size: 16px; margin-bottom: 8px; }
+.modal-section p,.modal-section li { color: #4b5563; font-size: 14px; line-height: 1.6; }
+.modal-section ul { padding-left: 20px; }
+.badge {
+      display: inline-block;
+      background: #e0e7ff;
+      color: #667eea;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      margin: 5px 5px 0 0;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="header">
-      <h1>Cleanzee Reader</h1>
-      <p>v1.1 - The cleanest way to read Wikipedia</p>
-    </div>
+    <div class="card">
+      <div class="top-buttons">
+        <button class="about-btn" onclick="openModal()">
+          <i class="fas fa-circle-info"></i> About
+        </button>
+      </div>
 
-    <div class="input-group">
-      <input type="text" id="urlInput" placeholder="Paste Wikipedia link here..." autocomplete="off">
-      <button id="cleanBtn" onclick="getArticle()">Get Article</button>
-    </div>
+      <div class="header">
+        <h1><i class="fas fa-book-open"></i> Cleanzee Reader</h1>
+        <div class="tagline"><span>FAST</span> • <span>SIMPLE</span> • <span>FREE</span></div>
+        <p>The cleanest way to read Wikipedia</p>
+      </div>
 
-    <div class="note">
-      <b>Important Note:</b> Cleanzee removes ads, sidebars, and clutter from Wikipedia articles for focused reading. Formal reading mode by Muhammad Rhaed.
-    </div>
+      <div class="input-group">
+        <i class="fas fa-link input-icon"></i>
+        <input type="text" id="urlInput" placeholder="Paste Wikipedia link here..." autocomplete="off">
+      </div>
 
-    <div id="reader">
-      <p class="loading">Paste a Wikipedia link above and tap "Get Article"</p>
+      <button id="cleanBtn" onclick="getArticle()">
+        <i class="fas fa-sparkles"></i> Get Clean Article
+      </button>
+
+      <div class="note">
+        <i class="fas fa-wand-magic-sparkles"></i>
+        <b>Important Note:</b> Cleanzee removes ads, sidebars, and clutter from Wikipedia for focused reading.
+      </div>
+
+      <div id="reader">
+        <p class="loading"><i class="fas fa-arrow-up"></i> Paste a Wikipedia link above to start reading</p>
+      </div>
     </div>
 
     <div class="footer">
-      Made with focus by Muhammad Rhaed • v1.1
+      Made with <i class="fas fa-heart"></i> by Muhammad Rhaed
+    </div>
+  </div>
+
+  <!-- About Modal -->
+  <div id="aboutModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fas fa-book-open"></i> About Cleanzee</h2>
+        <button class="close-btn" onclick="closeModal()">&times;</button>
+      </div>
+
+      <div class="modal-section">
+        <h3><i class="fas fa-hand"></i> Welcome!</h3>
+        <p>Cleanzee Reader helps you read Wikipedia without ads, sidebars, or distractions. Just pure content.</p>
+      </div>
+
+      <div class="modal-section">
+        <h3><i class="fas fa-user"></i> Creator</h3>
+        <p><b>Muhammad Rhaed</b><br>15 y/o student from Philippines<br>Built entirely on Honor X7a using GitHub Mobile</p>
+      </div>
+
+      <div class="modal-section">
+        <h3><i class="fas fa-code-branch"></i> Version</h3>
+        <span class="badge">v1.2</span>
+        <span class="badge">Sept 2026</span>
+        <p style="margin-top:8px;">Second commit with beautiful UI and About section.</p>
+      </div>
+
+      <div class="modal-section">
+        <h3><i class="fas fa-circle-info"></i> Info</h3>
+        <p><b>How it works:</b> Uses Wikipedia's public API to fetch clean article summaries.</p>
+        <p><b>Privacy:</b> Zero tracking. No accounts. No data collected.</p>
+        <p><b>Cost:</b> 100% free forever. Hosted on GitHub Pages.</p>
+      </div>
+
+      <div class="modal-section">
+        <h3><i class="fas fa-heart"></i> Support Us</h3>
+        <p>Love Cleanzee? Help us grow:</p>
+        <ul>
+          <li>Star the repo on GitHub ⭐</li>
+          <li>Share with classmates & teachers</li>
+          <li>Follow @muhammadrhaed for updates</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h3><i class="fas fa-shield"></i> Policy</h3>
+        <p><b>Content:</b> All article content belongs to Wikipedia under CC BY-SA 3.0</p>
+        <p><b>Usage:</b> For educational and personal use only.</p>
+        <p><b>Limitations:</b> Current version supports Wikipedia only. More sites in v2.0</p>
+      </div>
+
+      <div class="modal-section">
+        <h3><i class="fas fa-rocket"></i> Coming Soon</h3>
+        <span class="badge">v2.0</span>
+        <p style="margin-top:8px;">AI Summary, Dark Mode, CNN/BBC/Rappler support, Offline reading</p>
+      </div>
     </div>
   </div>
 
   <script>
+    function openModal() {
+      document.getElementById('aboutModal').style.display = 'block';
+    }
+    function closeModal() {
+      document.getElementById('aboutModal').style.display = 'none';
+    }
+    window.onclick = function(event) {
+      const modal = document.getElementById('aboutModal');
+      if (event.target == modal) closeModal();
+    }
+
     async function getArticle() {
       const urlInput = document.getElementById('urlInput');
       const reader = document.getElementById('reader');
@@ -99,18 +283,18 @@
       const url = urlInput.value.trim();
 
       if (!url) {
-        reader.innerHTML = '<p class="error">Please paste a Wikipedia URL first</p>';
+        reader.innerHTML = '<p class="error"><i class="fas fa-triangle-exclamation"></i> Please paste a Wikipedia URL first</p>';
         return;
       }
 
       if (!url.includes('wikipedia.org/wiki/')) {
-        reader.innerHTML = '<p class="error">Only Wikipedia links work in v1.1<br><br>Example: https://en.wikipedia.org/wiki/Philippines</p>';
+        reader.innerHTML = '<p class="error"><i class="fas fa-ban"></i> Only Wikipedia links work currently<br><br><small>Example: https://en.wikipedia.org/wiki/Philippines</small></p>';
         return;
       }
 
       btn.disabled = true;
-      btn.textContent = 'Loading...';
-      reader.innerHTML = '<p class="loading">Fetching clean article...</p>';
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+      reader.innerHTML = '<p class="loading"><i class="fas fa-hourglass-half"></i> Fetching clean article...</p>';
 
       try {
         const title = decodeURIComponent(url.split('/wiki/')[1].split('#')[0].split('?')[0]);
@@ -126,21 +310,21 @@
 
         const data = await res.json();
 
-        let html = `<h2>${data.title}</h2>`;
+        let html = `<h2><i class="fas fa-file-lines"></i> ${data.title}</h2>`;
         if (data.thumbnail && data.thumbnail.source) {
           html += `<img src="${data.thumbnail.source}" alt="${data.title}">`;
         }
         html += `<p>${data.extract_html || data.extract}</p>`;
-        html += `<p style="margin-top:20px;font-size:12px;color:#80868b;">Source: Wikipedia • <a href="${url}" target="_blank">View original</a></p>`;
+        html += `<p style="margin-top:25px;font-size:13px;color:#6b7280;"><i class="fas fa-link"></i> Source: <a href="${url}" target="_blank" style="color:#667eea;">View on Wikipedia</a></p>`;
 
         reader.innerHTML = html;
 
       } catch (err) {
-        reader.innerHTML = `<p class="error">Error: ${err.message}<br><br>Try: https://en.wikipedia.org/wiki/Artificial_intelligence</p>`;
+        reader.innerHTML = `<p class="error"><i class="fas fa-circle-xmark"></i> Error: ${err.message}<br><br><small>Try: https://en.wikipedia.org/wiki/Artificial_intelligence</small></p>`;
       }
 
       btn.disabled = false;
-      btn.textContent = 'Get Article';
+      btn.innerHTML = '<i class="fas fa-sparkles"></i> Get Clean Article';
     }
 
     document.getElementById('urlInput').addEventListener('keypress', function(e) {
@@ -148,4 +332,4 @@
     });
   </script>
 </body>
-</html>
+  </html>
