@@ -25,11 +25,23 @@
       position: relative;
     }
 .header { text-align: center; margin-bottom: 20px; }
-.header h1 {
-      font-size: 32px;
+.logo-c {
+      width: 70px;
+      height: 70px;
       background: linear-gradient(135deg, #667eea, #764ba2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 12px;
+      box-shadow: 0 8px 20px rgba(102,126,234,0.3);
+    }
+.header h1 {
+      font-size: 28px;
+      color: #1f2937;
       margin-bottom: 8px;
     }
 .tagline {
@@ -128,12 +140,12 @@
     }
 .modal-content {
       background: white;
-      margin: 10% auto;
+      margin: 5% auto;
       padding: 30px;
       border-radius: 24px;
       width: 90%;
       max-width: 500px;
-      max-height: 80vh;
+      max-height: 85vh;
       overflow-y: auto;
     }
 .modal-header {
@@ -166,6 +178,24 @@
       font-weight: 600;
       margin: 5px 5px 0 0;
     }
+.african-icon {
+      text-align: center;
+      margin: 25px 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      border-radius: 16px;
+    }
+.african-icon i {
+      font-size: 48px;
+      color: #92400e;
+      margin-bottom: 10px;
+    }
+.african-icon p {
+      font-weight: 600;
+      color: #78350f;
+      font-size: 15px;
+      margin: 0;
+    }
   </style>
 </head>
 <body>
@@ -178,7 +208,8 @@
       </div>
 
       <div class="header">
-        <h1><i class="fas fa-book-open"></i> Cleanzee Reader</h1>
+        <div class="logo-c">C</div>
+        <h1>Cleanzee Reader</h1>
         <div class="tagline"><span>FAST</span> • <span>SIMPLE</span> • <span>FREE</span></div>
         <p>The cleanest way to read Wikipedia</p>
       </div>
@@ -203,7 +234,7 @@
     </div>
 
     <div class="footer">
-      Made with <i class="fas fa-heart"></i> by Muhammad Rhaed
+      Made with <i class="fas fa-heart"></i> for focused readers
     </div>
   </div>
 
@@ -220,6 +251,11 @@
         <p>Cleanzee Reader helps you read Wikipedia without ads, sidebars, or distractions. Just pure content.</p>
       </div>
 
+      <div class="african-icon">
+        <i class="fas fa-user"></i>
+        <p>Read. Learn. Grow. Focused.</p>
+      </div>
+
       <div class="modal-section">
         <h3><i class="fas fa-user"></i> Creator</h3>
         <p><b>Muhammad Rhaed</b><br>15 y/o student from Philippines<br>Built entirely on Honor X7a using GitHub Mobile</p>
@@ -228,8 +264,8 @@
       <div class="modal-section">
         <h3><i class="fas fa-code-branch"></i> Version</h3>
         <span class="badge">v1.2</span>
-        <span class="badge">Sept 2026</span>
-        <p style="margin-top:8px;">Second commit with beautiful UI and About section.</p>
+        <span class="badge">June 2026</span>
+        <p style="margin-top:8px;">Clean UI with About modal and branding.</p>
       </div>
 
       <div class="modal-section">
