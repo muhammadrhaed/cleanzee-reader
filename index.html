@@ -1,538 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- GOOGLE VERIFICATION: Done ✅ -->
-  <meta name="google-site-verification" content="LYE1llqGQwmPASyzz-liafUi1NtwMyy8ONyOYa31tBg">
-  
-  <!-- SEO TITLE -->
-  <title>Cleanzee Reader - Remove Ads from Wikipedia | No Ads Wikipedia Reader | Fast Simple Free</title>
-  
-  <!-- SEO DESCRIPTION -->
-  <meta name="description" content="Cleanzee Reader removes ads, sidebars, and clutter from Wikipedia for distraction-free reading. Fast, simple, free Wikipedia reader. No ads, clean articles for students and researchers.">
-  
-  <!-- SEO KEYWORDS -->
-  <meta name="keywords" content="remove ads wikipedia, no ads wikipedia, wikipedia reader, clean wikipedia, wikipedia without ads, distraction free wikipedia, ad blocker wikipedia, simple wikipedia reader, fast wikipedia, free wikipedia reader, student wikipedia tool, wikipedia clean mode">
-  
-  <meta name="author" content="Muhammad Rhaed">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#667eea">
-  
-  <!-- SITEMAP -->
-  <link rel="sitemap" type="application/xml" href="sitemap.xml">
-  <link rel="canonical" href="https://muhammadrhaed.github.io/cleanzee-reader">
-  
-  <!-- Open Graph: Facebook/Twitter -->
-  <meta property="og:title" content="Cleanzee Reader - Wikipedia Without Ads">
-  <meta property="og:description" content="Remove ads, sidebars, and clutter from Wikipedia. Fast, simple, free reading experience for students.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://muhammadrhaed.github.io/cleanzee-reader">
-  <meta property="og:image" content="https://muhammadrhaed.github.io/cleanzee-reader/logo.png">
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Cleanzee Reader - No Ads Wikipedia">
-  <meta name="twitter:description" content="The cleanest way to read Wikipedia. Remove ads and distractions.">
-  <meta name="twitter:image" content="https://muhammadrhaed.github.io/cleanzee-reader/logo.png">
-  
-  <!-- Favicon PNG 512x512 -->
-  <link rel="icon" type="image/png" sizes="512x512" href="logo.png">
-  <link rel="apple-touch-icon" href="logo.png">
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      padding: 20px;
-      color: #1f2937;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- GOOGLE VERIFICATION -->
+    <meta name="google-site-verification" content="LYE1llqGQwmPASyzz-liafUi1NtwMyy8ONyOYa31tBg">
+    
+    <!-- SEO TITLE - CLEAN KNOWLEDGE LANG, WALANG (.) -->
+    <title>Cleanzee Reader - Clean Knowledge</title>
+    
+    <!-- SEO DESCRIPTION - FORMAL + HUMBLE + WORLDWIDE -->
+    <meta name="description" content="Cleanzee Reader: A simple webapp that helps you make clean reading. Focus, learn, and make knowledge clear. Clean Wikipedia reader for students and learners worldwide.">
+    
+    <!-- SEO KEYWORDS - LAHAT V1 TO V1.5.3 -->
+    <meta name="keywords" content="clean knowledge, clean reading, clean your mind, cleans your problems, focus, learn, education, webapp reader, make reading, make learning, wikipedia reader, clean wikipedia, student education tool, distraction free, focus mode, simple reader, fast webapp, free education tool, no ads, ads remover, remove ads, worldwide reader, brandable reader">
+    <meta name="author" content="Muhammad Rhaed">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#667eea">
+    
+    <!-- SITEMAP -->
+    <link rel="sitemap" type="application/xml" href="sitemap.xml">
+    <link rel="canonical" href="https://cleanzeereader.vercel.app">
+    
+    <!-- Open Graph - FORMAL -->
+    <meta property="og:title" content="Cleanzee Reader - Clean Knowledge">
+    <meta property="og:description" content="A simple webapp to make clean reading. Focus and learn with clean knowledge. Clean Wikipedia reader for everyone.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cleanzeereader.vercel.app">
+    <meta property="og:image" content="https://cleanzeereader.vercel.app/logo.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cleanzee Reader - Clean Knowledge">
+    <meta name="twitter:description" content="Make clean reading. Focus, learn, and make knowledge clear. Simple Wikipedia reader.">
+    <meta name="twitter:image" content="https://cleanzeereader.vercel.app/logo.png">
+    
+    <!-- Favicon 512x512 -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS - 100% FAST, STABLE, NO BUG, SAME UI -->
+    <style>
+        :root{--primary:#667eea;--primary-dark:#764ba2;--success:#10b981;--text:#1f2937;--text-light:#6b7280;--bg-glass:rgba(255,255,255,0.95)}
+        *{box-sizing:border-box;margin:0;padding:0}
+        html{font-size:16px}
+        body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);min-height:100vh;padding:clamp(12px,3vw,20px);color:var(--text);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;line-height:1.6}
+        .container{max-width:700px;margin:0 auto;width:100%}
+        .card{background:var(--bg-glass);backdrop-filter:blur(10px);border-radius:clamp(16px,4vw,24px);padding:clamp(20px,5vw,30px);box-shadow:0 20px 40px rgba(0,0,0,0.1);position:relative}
+        .header{text-align:center;margin-bottom:clamp(16px,4vw,20px)}
+        .logo-c{width:clamp(60px,15vw,70px);height:clamp(60px,15vw,70px);background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:clamp(16px,4vw,20px);display:inline-flex;align-items:center;justify-content:center;font-size:clamp(36px,9vw,42px);font-weight:800;color:#fff;margin-bottom:12px;box-shadow:0 8px 20px rgba(102,126,234,0.3)}
+        .header h1{font-size:clamp(24px,6vw,28px);color:var(--text);margin-bottom:8px;font-weight:700}
+        .tagline{font-weight:700;font-size:clamp(14px,3.5vw,16px);color:var(--text);letter-spacing:1px;margin:10px 0}
+        .tagline span{color:var(--primary)}
+        .header p{color:var(--text-light);font-size:clamp(13px,3.2vw,14px)}
+        .top-buttons{position:absolute;top:clamp(16px,4vw,20px);right:clamp(16px,4vw,20px);display:flex;gap:8px}
+        .about-btn{background:rgba(102,126,234,0.1);border:1px solid var(--primary);color:var(--primary);padding:8px 14px;border-radius:12px;font-size:clamp(12px,3vw,13px);cursor:pointer;font-weight:500;transition:all 0.2s}
+        .about-btn:active{background:rgba(102,126,234,0.2);transform:scale(0.95)}
+        .share-btn-top{background:rgba(16,185,129,0.1);border:1px solid var(--success);color:var(--success);padding:8px 14px;border-radius:12px;font-size:clamp(12px,3vw,13px);cursor:pointer;font-weight:500;transition:all 0.2s}
+        .share-btn-top:active{background:rgba(16,185,129,0.2);transform:scale(0.95)}
+        .input-group{position:relative;margin-bottom:15px;margin-top:10px}
+        input{width:100%;padding:clamp(14px,4vw,16px) clamp(45px,12vw,50px);border:2px solid #e5e7eb;border-radius:16px;font-size:clamp(15px,4vw,16px);outline:none;transition:all 0.3s;-webkit-user-select:text;user-select:text}
+        input:focus{border-color:var(--primary);box-shadow:0 0 4px rgba(102,126,234,0.1)}
+        .input-icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);color:#9ca3af;font-size:clamp(14px,3.5vw,16px)}
+        .btn-group{display:flex;gap:10px;margin-bottom:15px;flex-wrap:wrap}
+        button{flex:1 1 auto;min-width:140px;padding:clamp(14px,4vw,16px);background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;border:none;border-radius:16px;font-size:clamp(15px,4vw,16px);font-weight:600;cursor:pointer;transition:transform 0.2s}
+        button:active{transform:scale(0.98)}
+        button:disabled{opacity:0.6;cursor:not-allowed}
+        .search-btn{background:var(--success)}
+        .samples{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:15px;align-items:center}
+        .samples span{font-size:clamp(12px,3vw,13px)}
+        .sample-btn{background:#f3f4f6;color:#4b5563;padding:8px 12px;border-radius:10px;font-size:clamp(12px,3vw,13px);border:1px solid #e5e7eb;cursor:pointer;font-weight:500;transition:all 0.2s}
+        .sample-btn:active{background:#e5e7eb;transform:scale(0.95)}
+        .note{background:linear-gradient(135deg,#e0e7ff,#f3e8ff);padding:clamp(16px,4vw,18px);border-radius:16px;margin:20px 0;border-left:4px solid var(--primary);font-size:clamp(13px,3.2vw,14px)}
+        .note i{color:var(--primary);margin-right:8px}
+        #reader{margin-top:25px;padding:clamp(20px,5vw,25px);background:#fff;border-radius:20px;line-height:1.8;min-height:120px;box-shadow:0 4px 12px rgba(0,0,0,0.05);-webkit-user-select:text;user-select:text}
+        #reader h2{color:var(--text);margin-bottom:15px;font-size:clamp(20px,5vw,24px)}
+        #reader img{max-width:100%;height:auto;border-radius:16px;margin:15px 0}
+        #reader p{font-size:clamp(15px,4vw,16px)}
+        .error{color:#dc2626;text-align:center;font-weight:500;font-size:clamp(14px,3.5vw,16px)}
+        .loading{text-align:center;color:var(--text-light);font-size:clamp(14px,3.5vw,16px)}
+        .footer{text-align:center;margin-top:25px;font-size:clamp(12px,3vw,13px);color:rgba(255,255,255,0.8)}
+        .worldwide-share{text-align:center;margin-top:30px;padding:20px;background:rgba(255,255,255,0.1);border-radius:16px;backdrop-filter:blur(5px)}
+        .worldwide-share i{font-size:48px;color:#fff;margin-bottom:10px}
+        .worldwide-share p{color:#fff;font-size:clamp(13px,3.2vw,14px);font-weight:500;margin:0}
+        .seo-text{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+        .modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.5);backdrop-filter:blur(5px);padding:20px}
+        .modal-content{background:#fff;margin:5% auto;padding:clamp(24px,6vw,30px);border-radius:24px;width:100%;max-width:500px;max-height:85vh;overflow-y:auto;-webkit-user-select:text;user-select:text}
+        .modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+        .modal-header h2{color:var(--primary);font-size:clamp(20px,5vw,24px)}
+        .close-btn{background:#f3f4f6;border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:18px;flex-shrink:0}
+        .modal-section{margin-bottom:20px}
+        .modal-section h3{color:var(--text);font-size:clamp(15px,4vw,16px);margin-bottom:8px}
+        .modal-section p,.modal-section li{color:#4b5563;font-size:clamp(13px,3.2vw,14px);line-height:1.6}
+        .modal-section ul{padding-left:20px}
+        .modal-section i{color:var(--primary);margin-right:6px}
+        .creator-card{text-align:center;padding:20px;background:linear-gradient(135deg,#fef3c7,#fde68a);border-radius:16px;margin:15px 0}
+        .creator-card i{font-size:48px;color:#92400e;margin-bottom:10px}
+        .creator-card p{font-weight:600;color:#78350f;font-size:15px;margin:0}
+        .how-to{background:#f0fdf4;padding:15px;border-radius:12px;margin-top:15px;border-left:4px solid var(--success)}
+        .how-to h4{color:#065f46;margin-bottom:8px;font-size:clamp(13px,3.2vw,14px)}
+        .how-to ol{padding-left:20px;color:#065f46;font-size:clamp(12px,3vw,13px)}
+        .how-to li{margin-bottom:5px}
+        @media (max-width:480px){.btn-group{flex-direction:column}button{min-width:100%}.top-buttons{top:12px;right:12px;flex-direction:column}}
+        @media (min-width:768px){.container{max-width:800px}}
+    </style>
+    
+    <!-- JSON-LD Schema - FORMAL + HUMBLE -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Cleanzee Reader",
+        "alternateName": ["Cleanzee", "Clean Knowledge"],
+        "description": "A simple webapp to make clean reading. Focus, learn, and make knowledge clear for students worldwide.",
+        "url": "https://cleanzeereader.vercel.app",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Any",
+        "offers": {"@type": "Offer","price": "0","priceCurrency": "USD"},
+        "creator": {"@type": "Person","name": "Muhammad Rhaed"},
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://cleanzeereader.vercel.app/logo.png",
+            "width": "512",
+            "height": "512"
+        },
+        "keywords": "clean knowledge, clean reading, focus, learn, make reading, education, webapp reader"
     }
-.container { max-width: 700px; margin: 0 auto; }
-.card {
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 24px;
-      padding: 30px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-      position: relative;
-    }
-.header { text-align: center; margin-bottom: 20px; }
-.logo-c {
-      width: 70px;
-      height: 70px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      border-radius: 20px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 42px;
-      font-weight: 800;
-      color: white;
-      margin-bottom: 12px;
-      box-shadow: 0 8px 20px rgba(102,126,234,0.3);
-    }
-.header h1 {
-      font-size: 28px;
-      color: #1f2937;
-      margin-bottom: 8px;
-    }
-.tagline {
-      font-weight: 700;
-      font-size: 16px;
-      color: #1f2937;
-      letter-spacing: 1px;
-      margin: 10px 0;
-    }
-.tagline span { color: #667eea; }
-.header p { color: #6b7280; font-size: 14px; }
-.top-buttons {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-.about-btn {
-      background: rgba(102,126,234,0.1);
-      border: 1px solid #667eea;
-      color: #667eea;
-      padding: 8px 14px;
-      border-radius: 12px;
-      font-size: 13px;
-      cursor: pointer;
-      font-weight: 500;
-    }
-.about-btn:active { background: rgba(102,126,234,0.2); }
-.input-group { position: relative; margin-bottom: 15px; margin-top: 10px; }
-    input {
-      width: 100%;
-      padding: 16px 50px;
-      border: 2px solid #e5e7eb;
-      border-radius: 16px;
-      font-size: 16px;
-      outline: none;
-      transition: all 0.3s;
-      -webkit-user-select: text;
-      user-select: text;
-    }
-    input:focus { border-color: #667eea; box-shadow: 0 0 0 4px rgba(102,126,234,0.1); }
-.input-icon {
-      position: absolute;
-      left: 18px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #9ca3af;
-    }
-.btn-group {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 15px;
-    }
-    button {
-      flex: 1;
-      padding: 16px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: white;
-      border: none;
-      border-radius: 16px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-    button:active { transform: scale(0.98); }
-    button:disabled { opacity: 0.6; cursor: not-allowed; }
-.search-btn {
-      background: #10b981;
-    }
-.samples {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 15px;
-    }
-.sample-btn {
-      background: #f3f4f6;
-      color: #4b5563;
-      padding: 8px 12px;
-      border-radius: 10px;
-      font-size: 13px;
-      border: 1px solid #e5e7eb;
-      cursor: pointer;
-      font-weight: 500;
-    }
-.sample-btn:active { background: #e5e7eb; }
-.note {
-      background: linear-gradient(135deg, #e0e7ff, #f3e8ff);
-      padding: 18px;
-      border-radius: 16px;
-      margin: 20px 0;
-      border-left: 4px solid #667eea;
-      font-size: 14px;
-    }
-.note i { color: #667eea; margin-right: 8px; }
-    #reader {
-      margin-top: 25px;
-      padding: 25px;
-      background: white;
-      border-radius: 20px;
-      line-height: 1.8;
-      min-height: 120px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      -webkit-user-select: text;
-      user-select: text;
-    }
-    #reader h2 { color: #1f2937; margin-bottom: 15px; }
-    #reader img { max-width: 100%; border-radius: 16px; margin: 15px 0; }
-.error { color: #dc2626; text-align: center; font-weight: 500; }
-.loading { text-align: center; color: #6b7280; }
-.footer { text-align: center; margin-top: 25px; font-size: 13px; color: rgba(255,255,255,0.8); }
-.footer i { color: #fbbf24; }
-
-    /* SEO Helper Text - Hidden pero nababasa ni Google */
-    .seo-text {
-      position: absolute;
-      left: -9999px;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-    }
-
-    /* Modal Styles */
-.modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(5px);
-    }
-.modal-content {
-      background: white;
-      margin: 5% auto;
-      padding: 30px;
-      border-radius: 24px;
-      width: 90%;
-      max-width: 500px;
-      max-height: 85vh;
-      overflow-y: auto;
-      -webkit-user-select: text;
-      user-select: text;
-    }
-.modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-.modal-header h2 { color: #667eea; font-size: 24px; }
-.close-btn {
-      background: #f3f4f6;
-      border: none;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 18px;
-    }
-.modal-section { margin-bottom: 20px; }
-.modal-section h3 { color: #1f2937; font-size: 16px; margin-bottom: 8px; }
-.modal-section p,.modal-section li { color: #4b5563; font-size: 14px; line-height: 1.6; }
-.modal-section ul { padding-left: 20px; }
-.badge {
-      display: inline-block;
-      background: #e0e7ff;
-      color: #667eea;
-      padding: 4px 10px;
-      border-radius: 8px;
-      font-size: 12px;
-      font-weight: 600;
-      margin: 5px 5px 0 0;
-    }
-.african-icon {
-      text-align: center;
-      margin: 25px 0;
-      padding: 20px;
-      background: linear-gradient(135deg, #fef3c7, #fde68a);
-      border-radius: 16px;
-    }
-.african-icon i {
-      font-size: 48px;
-      color: #92400e;
-      margin-bottom: 10px;
-    }
-.african-icon p {
-      font-weight: 600;
-      color: #78350f;
-      font-size: 15px;
-      margin: 0;
-    }
-.how-to {
-      background: #f0fdf4;
-      padding: 15px;
-      border-radius: 12px;
-      margin-top: 15px;
-      border-left: 4px solid #10b981;
-    }
-.how-to h4 { color: #065f46; margin-bottom: 8px; font-size: 14px; }
-.how-to ol { padding-left: 20px; color: #065f46; font-size: 13px; }
-.how-to li { margin-bottom: 5px; }
-  </style>
-  
-  <!-- JSON-LD Schema: Para mas maintindihan ni Google -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Cleanzee Reader",
-    "alternateName": ["Cleanzee", "Wikipedia Reader", "No Ads Wikipedia"],
-    "description": "Remove ads, sidebars, and clutter from Wikipedia for distraction-free reading. Fast, simple, free Wikipedia reader.",
-    "url": "https://muhammadrhaed.github.io/cleanzee-reader",
-    "applicationCategory": "EducationalApplication",
-    "operatingSystem": "Any",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "creator": {
-      "@type": "Person",
-      "name": "Muhammad Rhaed"
-    },
-    "logo": "https://muhammadrhaed.github.io/cleanzee-reader/logo.png"
-  }
-  </script>
+    </script>
 </head>
 <body>
-  <!-- Hidden SEO Text para sa keywords -->
-  <div class="seo-text">
-    <h2>Cleanzee Reader - Remove Ads from Wikipedia</h2>
-    <p>Best Wikipedia reader with no ads. Clean Wikipedia articles without distractions. Free ad blocker for Wikipedia. Simple Wikipedia reader for students. How to remove ads from Wikipedia. Wikipedia without ads. Clean reading mode for Wikipedia. Fast Wikipedia reader. Distraction free Wikipedia experience. Wikipedia clean mode.</p>
-  </div>
-
-  <div class="container">
-    <div class="card">
-      <div class="top-buttons">
-        <button class="about-btn" onclick="openModal()">
-          <i class="fas fa-circle-info"></i> About
-        </button>
-      </div>
-
-      <div class="header">
-        <div class="logo-c">C</div>
-        <h1>Cleanzee Reader</h1>
-        <div class="tagline"><span>FAST</span> • <span>SIMPLE</span> • <span>FREE</span></div>
-        <p>The cleanest way to read Wikipedia - No Ads, No Clutter</p>
-      </div>
-
-      <div class="input-group">
-        <i class="fas fa-search input-icon"></i>
-        <input type="text" id="urlInput" placeholder="Type topic or paste Wikipedia link..." autocomplete="off">
-      </div>
-
-      <div class="samples">
-        <span style="font-size:13px;color:#6b7280;margin-right:5px;">Try:</span>
-        <button class="sample-btn" onclick="loadSample('Philippines')">Philippines</button>
-        <button class="sample-btn" onclick="loadSample('History')">History</button>
-        <button class="sample-btn" onclick="loadSample('Science')">Science</button>
-      </div>
-
-      <div class="btn-group">
-        <button id="searchBtn" class="search-btn" onclick="searchTopic()">
-          <i class="fas fa-magnifying-glass"></i> Search
-        </button>
-        <button id="cleanBtn" onclick="getArticle()">
-          <i class="fas fa-link"></i> Use Link
-        </button>
-      </div>
-
-      <div class="note">
-        <i class="fas fa-wand-magic-sparkles"></i>
-        <b>Remove Ads:</b> Cleanzee removes ads, sidebars, and clutter from Wikipedia for focused reading. Clean Wikipedia experience.
-      </div>
-
-      <div class="how-to">
-        <h4><i class="fas fa-circle-question"></i> How to Use:</h4>
-        <ol>
-          <li><b>Quick Start:</b> Type any topic and press "Search" - No ads Wikipedia reader</li>
-          <li><b>Have a link:</b> Paste Wikipedia URL and press "Use Link"</li>
-          <li><b>New here:</b> Tap "Philippines" button above to try</li>
-        </ol>
-      </div>
-
-      <div id="reader">
-        <p class="loading"><i class="fas fa-arrow-up"></i> Type a topic like "History" then press Search - Remove ads from Wikipedia instantly</p>
-      </div>
+    <!-- Hidden SEO Text - NO ADS KEYWORDS DITO LANG -->
+    <div class="seo-text">
+        <h2>Cleanzee Reader - Clean Knowledge</h2>
+        <p>Simple webapp to make clean reading. Focus and learn with clean knowledge. Education tool for students. Remove ads and distractions. No ads Wikipedia reader. Ads remover for focused learning. Clean your mind with clean reading.</p>
     </div>
-
-    <div class="footer">
-      Made with <i class="fas fa-heart"></i> for focused readers | No Ads Wikipedia Reader
+    
+    <div class="container">
+        <div class="card">
+            <div class="top-buttons">
+                <button class="share-btn-top" onclick="shareCleanzee()">
+                    <i class="fas fa-share-nodes"></i> Share
+                </button>
+                <button class="about-btn" onclick="openModal()">
+                    <i class="fas fa-circle-info"></i> About
+                </button>
+            </div>
+            
+            <div class="header">
+                <div class="logo-c">C</div>
+                <h1>Cleanzee Reader</h1>
+                <div class="tagline"><span>SIMPLE</span> • <span>CLEAN</span> • <span>MAKE</span></div>
+                <p>Make clean reading. Make learning clear.</p>
+            </div>
+            
+            <div class="input-group">
+                <i class="fas fa-search input-icon"></i>
+                <input type="text" id="urlInput" placeholder="Type topic or paste Wikipedia link..." autocomplete="off">
+            </div>
+            
+            <div class="samples">
+                <span>Try:</span>
+                <button class="sample-btn" onclick="loadSample('Philippines')">Philippines</button>
+                <button class="sample-btn" onclick="loadSample('History')">History</button>
+                <button class="sample-btn" onclick="loadSample('Science')">Science</button>
+            </div>
+            
+            <div class="btn-group">
+                <button id="searchBtn" class="search-btn" onclick="searchTopic()">
+                    <i class="fas fa-magnifying-glass"></i> Search
+                </button>
+                <button id="cleanBtn" onclick="getArticle()">
+                    <i class="fas fa-link"></i> Use Link
+                </button>
+            </div>
+            
+            <!-- NOTE - WALANG ADS WORDS, BRANDABLE LANG -->
+            <div class="note">
+                <i class="fas fa-book-open"></i>
+                <b>Clean Knowledge:</b> Cleanzee helps you make clean reading. Simple, focused, and clear for learning.
+            </div>
+            
+            <div class="how-to">
+                <h4><i class="fas fa-circle-question"></i> How to Use:</h4>
+                <ol>
+                    <li><b>Search:</b> Type any topic and press "Search"</li>
+                    <li><b>Link:</b> Paste Wikipedia URL and press "Use Link"</li>
+                    <li><b>Explore:</b> Tap sample topics above</li>
+                </ol>
+            </div>
+            
+            <div id="reader">
+                <p class="loading"><i class="fas fa-arrow-up"></i> Type a topic like "History" then press Search</p>
+            </div>
+        </div>
+        
+        <!-- EARTH ICON + SHARE TEXT SA BABA -->
+        <div class="worldwide-share">
+            <i class="fas fa-earth-asia"></i>
+            <p>Share this website to your friends and families.</p>
+        </div>
+        
+        <div class="footer">
+            Made with care for learners worldwide
+        </div>
     </div>
-  </div>
-
-  <!-- About Modal -->
-  <div id="aboutModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2><i class="fas fa-book-open"></i> About Cleanzee Reader</h2>
-        <button class="close-btn" onclick="closeModal()">&times;</button>
-      </div>
-
-      <div class="modal-section">
-        <h3><i class="fas fa-hand"></i> Welcome!</h3>
-        <p>Cleanzee Reader helps you read Wikipedia without ads, sidebars, or distractions. Just pure content. Remove ads from Wikipedia instantly.</p>
-      </div>
-
-      <div class="african-icon">
-        <i class="fas fa-user"></i>
-        <p>Read. Learn. Grow. Focused. No Ads.</p>
-      </div>
-
-      <div class="modal-section">
-        <h3><i class="fas fa-user"></i> Creator</h3>
-        <p><b>Muhammad Rhaed</b><br>15 y/o student from Philippines<br>Built entirely on Honor X7a using GitHub Mobile</p>
-      </div>
-
-      <div class="modal-section">
-        <h3><i class="fas fa-code-branch"></i> Version</h3>
-        <span class="badge">v1.3</span>
-        <span class="badge">June 2026</span>
-        <span class="badge">SEO Optimized</span>
-        <p style="margin-top:8px;">Wikipedia reader with no ads. SEO optimized for "remove ads wikipedia" searches.</p>
-      </div>
-
-      <div class="modal-section">
-        <h3><i class="fas fa-circle-info"></i> Info</h3>
-        <p><b>How it works:</b> Uses Wikipedia's public API to fetch clean article summaries. No ads, no clutter.</p>
-        <p><b>Privacy:</b> Zero tracking. No accounts. No data collected.</p>
-        <p><b>Cost:</b> 100% free forever. Hosted on GitHub Pages.</p>
-      </div>
-
-      <div class="modal-section">
-        <h3><i class="fas fa-heart"></i> Support Us</h3>
-        <p>Love Cleanzee? Help us grow:</p>
-        <ul>
-          <li>Star the repo on GitHub ⭐</li>
-          <li>Share with classmates & teachers</li>
-          <li>Search "no ads wikipedia reader" to find us</li>
-        </ul>
-      </div>
-
-      <div class="modal-section">
-        <h3><i class="fas fa-shield"></i> Policy</h3>
-        <p><b>Content:</b> All article content belongs to Wikipedia under CC BY-SA 3.0</p>
-        <p><b>Usage:</b> For educational and personal use only.</p>
-        <p><b>Limitations:</b> Current version supports Wikipedia only. Remove ads from Wikipedia instantly.</p>
-      </div>
-
-      <div class="modal-section">
-        <h3><i class="fas fa-rocket"></i> Coming Soon - v2.0</h3>
-        <span class="badge">Multi-Language</span>
-        <span class="badge">Dark Mode</span>
-        <span class="badge">AI Summary</span>
-        <p style="margin-top:8px;">Tagalog, Cebuano, Spanish support. CNN/BBC/Rappler integration. Offline reading.</p>
-      </div>
+    
+    <!-- About Modal - WALANG VERSION, WALANG COMING SOON -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-book-open"></i> About Cleanzee Reader</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            
+            <div class="modal-section">
+                <h3><i class="fas fa-hand"></i> Welcome!</h3>
+                <p>Cleanzee Reader helps you make clean reading. Simple, focused, and clear. Just pure content for learning. <b>No ads, ads remover built-in.</b></p>
+            </div>
+            
+            <div class="creator-card">
+                <i class="fas fa-user-graduate"></i>
+                <p>Read. Learn. Make. Focused.</p>
+            </div>
+            
+            <div class="modal-section">
+                <h3><i class="fas fa-user"></i> Creator</h3>
+                <p><b>Muhammad Rhaed</b><br>15 y/o student from Philippines<br>Built with care on mobile</p>
+            </div>
+            
+            <div class="modal-section">
+                <h3><i class="fas fa-heart"></i> Support Us</h3>
+                <p>If Cleanzee helps you learn:</p>
+                <ul>
+                    <li><i class="fas fa-share-nodes"></i> Tap the "Share" button to send to classmates</li>
+                    <li><i class="fas fa-star"></i> Star the project on GitHub</li>
+                    <li><i class="fas fa-search"></i> Search "Cleanzee Reader" to find us again</li>
+                </ul>
+            </div>
+            
+            <div class="modal-section">
+                <h3><i class="fas fa-circle-info"></i> Info</h3>
+                <p><i class="fas fa-code"></i> <b>How it works:</b> Uses Wikipedia's public API to fetch clean summaries. <b>No ads, ads remover included.</b></p>
+                <p><i class="fas fa-shield"></i> <b>Privacy:</b> Zero tracking. No accounts. No data collected.</p>
+                <p><i class="fas fa-gift"></i> <b>Cost:</b> 100% free forever.</p>
+            </div>
+            
+            <div class="modal-section">
+                <h3><i class="fas fa-scale-balanced"></i> Policy</h3>
+                <p><i class="fas fa-file-contract"></i> <b>Content:</b> All article content belongs to Wikipedia under CC BY-SA 3.0</p>
+                <p><i class="fas fa-user-check"></i> <b>Usage:</b> For educational and personal use only.</p>
+            </div>
+        </div>
     </div>
-  </div>
-
-  <script>
-    function openModal() {
-      document.getElementById('aboutModal').style.display = 'block';
-    }
-    function closeModal() {
-      document.getElementById('aboutModal').style.display = 'none';
-    }
-    window.onclick = function(event) {
-      const modal = document.getElementById('aboutModal');
-      if (event.target == modal) closeModal();
-    }
-
-    function loadSample(topic) {
-      document.getElementById('urlInput').value = topic;
-      searchTopic();
-    }
-
-    function searchTopic() {
-      const input = document.getElementById('urlInput').value.trim();
-      if (!input) {
-        document.getElementById('reader').innerHTML = '<p class="error"><i class="fas fa-triangle-exclamation"></i> Please type a topic first</p>';
-        return;
-      }
-      
-      const topic = input.replace(/ /g, '_');
-      const url = `https://en.wikipedia.org/wiki/${topic}`;
-      document.getElementById('urlInput').value = url;
-      getArticle();
-    }
-
-    async function getArticle() {
-      const urlInput = document.getElementById('urlInput');
-      const reader = document.getElementById('reader');
-      const btn = document.getElementById('cleanBtn');
-      const searchBtn = document.getElementById('searchBtn');
-      const url = urlInput.value.trim();
-
-      if (!url) {
-        reader.innerHTML = '<p class="error"><i class="fas fa-triangle-exclamation"></i> Please type a topic or paste a Wikipedia link first</p>';
-        return;
-      }
-
-      if (!url.includes('wikipedia.org/wiki/')) {
-        reader.innerHTML = '<p class="error"><i class="fas fa-ban"></i> Not a Wikipedia link. Press "Search" button instead to auto-convert your topic.<br><br><small>Or try the sample buttons above</small></p>';
-        return;
-      }
-
-      btn.disabled = true;
-      searchBtn.disabled = true;
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
-      reader.innerHTML = '<p class="loading"><i class="fas fa-hourglass-half"></i> Fetching clean article... No ads, just content</p>';
-
-      try {
-        const title = decodeURIComponent(url.split('/wiki/')[1].split('#')[0].split('?')[0]);
-        if (!title) throw new Error('Invalid Wikipedia URL');
-
-        const apiUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${title}`;
-        const res = await fetch(apiUrl);
-
-        if (!res.ok) {
-          if (res.status === 404) throw new Error('Article not found. Try a different spelling.');
-          throw new Error('Wikipedia API error');
+    
+    <script>
+        function openModal(){document.getElementById('aboutModal').style.display='block'}
+        function closeModal(){document.getElementById('aboutModal').style.display='none'}
+        window.onclick=function(event){const modal=document.getElementById('aboutModal');if(event.target==modal)closeModal()}
+        
+        function shareCleanzee(){
+            const shareData={
+                title:'Cleanzee Reader - Clean Knowledge',
+                text:'Simple webapp to make clean reading. Try Cleanzee Reader!',
+                url:window.location.href
+            };
+            if(navigator.share){
+                navigator.share(shareData).catch(err=>console.log('Share cancelled'));
+            }else{
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link copied! Share with friends and families 📤');
+            }
         }
-
-        const data = await res.json();
-
-        let html = `<h2><i class="fas fa-file-lines"></i> ${data.title}</h2>`;
-        if (data.thumbnail && data.thumbnail.source) {
-          html += `<img src="${data.thumbnail.source}" alt="${data.title}">`;
+        
+        function loadSample(topic){document.getElementById('urlInput').value=topic;searchTopic()}
+        
+        function searchTopic(){
+            const input=document.getElementById('urlInput').value.trim();
+            if(!input){
+                document.getElementById('reader').innerHTML='<p class="error"><i class="fas fa-triangle-exclamation"></i> Please type a topic first</p>';
+                return
+            }
+            const topic=input.replace(/ /g,'_');
+            const url=`https://en.wikipedia.org/wiki/${topic}`;
+            document.getElementById('urlInput').value=url;
+            getArticle()
         }
-        html += `<p>${data.extract_html || data.extract}</p>`;
-        html += `<p style="margin-top:25px;font-size:13px;color:#6b7280;"><i class="fas fa-link"></i> Source: <a href="${url}" target="_blank" style="color:#667eea;">View on Wikipedia</a> | Cleaned by Cleanzee Reader</p>`;
-
-        reader.innerHTML = html;
-
-      } catch (err) {
-        reader.innerHTML = `<p class="error"><i class="fas fa-circle-xmark"></i> Error: ${err.message}<br><br><small>Try: Philippines, History, or Science</small></p>`;
-      }
-
-      btn.disabled = false;
-      searchBtn.disabled = false;
-      btn.innerHTML = '<i class="fas fa-link"></i> Use Link';
-    }
-
-    document.getElementById('urlInput').addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') searchTopic();
-    });
-  </script>
+        
+        async function getArticle(){
+            const urlInput=document.getElementById('urlInput');
+            const reader=document.getElementById('reader');
+            const btn=document.getElementById('cleanBtn');
+            const searchBtn=document.getElementById('searchBtn');
+            const url=urlInput.value.trim();
+            
+            if(!url){
+                reader.innerHTML='<p class="error"><i class="fas fa-triangle-exclamation"></i> Please type a topic or paste a link first</p>';
+                return
+            }
+            if(!url.includes('wikipedia.org/wiki/')){
+                reader.innerHTML='<p class="error"><i class="fas fa-ban"></i> Not a Wikipedia link. Press "Search" to auto-convert your topic.<br><small>Or try the sample buttons above</small></p>';
+                return
+            }
+            
+            btn.disabled=true;
+            searchBtn.disabled=true;
+            btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Loading...';
+            reader.innerHTML='<p class="loading"><i class="fas fa-hourglass-half"></i> Making clean reading...</p>';
+            
+            try{
+                const title=decodeURIComponent(url.split('/wiki/')[1].split('#')[0].split('?')[0]);
+                if(!title)throw new Error('Invalid Wikipedia URL');
+                const apiUrl=`https://en.wikipedia.org/api/rest_v1/page/summary/${title}`;
+                const res=await fetch(apiUrl);
+                if(!res.ok){
+                    if(res.status===404)throw new Error('Article not found. Try a different spelling.');
+                    throw new Error('Wikipedia API error')
+                }
+                const data=await res.json();
+                let html=`<h2><i class="fas fa-book-open"></i> ${data.title}</h2>`;
+                if(data.thumbnail&&data.thumbnail.source){
+                    html+=`<img src="${data.thumbnail.source}" alt="${data.title}">`
+                }
+                html+=`<p>${data.extract_html||data.extract}</p>`;
+                html+=`<p style="margin-top:25px;font-size:13px;color:#6b7280;"><i class="fas fa-link"></i> Source: <a href="${url}" target="_blank" style="color:#667eea;">View on Wikipedia</a> | Made clean by Cleanzee Reader</p>`;
+                reader.innerHTML=html
+            }catch(err){
+                reader.innerHTML=`<p class="error"><i class="fas fa-circle-xmark"></i> Error: ${err.message}<br><br><small>Try: Philippines, History, or Science</small></p>`
+            }
+            
+            btn.disabled=false;
+            searchBtn.disabled=false;
+            btn.innerHTML='<i class="fas fa-link"></i> Use Link'
+        }
+        
+        document.getElementById('urlInput').addEventListener('keypress',function(e){
+            if(e.key==='Enter')searchTopic()
+        });
+    </script>
 </body>
   </html>
