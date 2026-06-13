@@ -62,6 +62,8 @@
         .top-buttons{position:absolute;top:clamp(16px,4vw,20px);right:clamp(16px,4vw,20px);display:flex;gap:8px}
         .about-btn{background:rgba(102,126,234,0.1);border:1px solid var(--primary);color:var(--primary);padding:8px 14px;border-radius:12px;font-size:clamp(12px,3vw,13px);cursor:pointer;font-weight:500;transition:all 0.2s}
         .about-btn:active{background:rgba(102,126,234,0.2);transform:scale(0.95)}
+        .help-btn{background:rgba(255,107,53,0.12)!important;border:1px solid #FF6B35!important;color:#FF6B35!important}
+        .help-btn:hover{background:rgba(255,107,53,0.2)!important}
         .share-btn-top{background:rgba(16,185,129,0.1);border:1px solid var(--success);color:var(--success);padding:8px 14px;border-radius:12px;font-size:clamp(12px,3vw,13px);cursor:pointer;font-weight:500;transition:all 0.2s}
         .share-btn-top:active{background:rgba(16,185,129,0.2);transform:scale(0.95)}
         .input-group{position:relative;margin-bottom:15px;margin-top:10px}
@@ -150,12 +152,13 @@
                 <button class="about-btn" onclick="openModal()">
                     <i class="fas fa-circle-info"></i> About
                 </button>
+                <button class="top-btn help-btn" onclick="window.open('https://forms.gle/o15QbMnh3J9rXwYu6','_blank')"><i class="fas fa-comment-dots"></i> Help & Feedback</button>
             </div>
             
             <div class="header">
                 <div class="logo-c">C</div>
                 <h1>Cleanzee Reader</h1>
-                <div class="tagline"><span>SIMPLE</span> • <span>CLEAN</span> • <span>MAKE</span></div>
+                <div class="tagline"><span>SIMPLE</span> • <span>CLEAN</span> • <span>FAST</span></div>
                 <p>Make clean reading. Make learning clear.</p>
             </div>
             
@@ -226,7 +229,7 @@
             
             <div class="creator-card">
                 <i class="fas fa-user-graduate"></i>
-                <p>Read. Learn. Make. Focused.</p>
+                <p>Read. Learn. Grow. Focused.</p>
             </div>
             
             <div class="modal-section">
